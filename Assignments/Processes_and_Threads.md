@@ -7,12 +7,12 @@
 
         `enum procstate { UNUSED, EMBRYO, SLEEPING, RUNNABLE, RUNNING, ZOMBIE };`
         
-        - *Unused* todo...
-        - *Embryo* todo...
-        - *Sleeping* - A process is waiting on an I/O operation.
+        - *Unused* - A process is waiting to be initialized.
+        - *Embryo* - A process has been initialized, but is not ready to run.
+        - *Sleeping* - A process is waiting on a system call. (I/O operations, etc.)
         - *Runnable* - A process is ready to run.
         - *Running* - A process is currently in control of the processor.
-        - *Zombie* A process has finished, but is waiting on a parent process to terminate it.
+        - *Zombie* A process has finished, but is waiting on a parent process to clean it up.
         
     1. Discuss why these states are needed. Would you prefer another amount of states?
     1. Find all the places in the code where a state change may occur.
